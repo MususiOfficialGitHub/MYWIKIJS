@@ -1,0 +1,180 @@
+<!--
+title: Requisitions Approvals
+description: Approve originated requisitions.
+published: true
+date: 2024-04-19T12:55:28.534Z
+tags: requisitions approvals
+editor: ckeditor
+dateCreated: 2024-04-19T12:55:25.947Z
+-->
+
+<h1>Approval</h1>
+<p><a href="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/Support.htm">Support</a> ›› <a href="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/Manual.htm">Manual</a> ›› <a href="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/ProcurementandAssetsManagement.htm">Procurement and Assets Management</a> ›› <a href="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/Operations2.htm">Operations</a> ›› <a href="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/Procurement.htm">Procurement</a> ›› <a href="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/Requisitions.htm">Requisitions</a> ››</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/img/arrow_up.png" alt="Parent"></figure>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/img/arrow_left.png" alt="Previous"></figure>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/img/arrow_right.png" alt="Next"></figure>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Requisitions Approval.&nbsp;</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Use this sub module to approve the originated procurement requisitions.</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem428.png" alt=""></figure>
+<p>NOTE : The approval process is sequential, and an approval work flow is initiated once a requisition is originated.&nbsp;</p>
+<ul>
+  <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The approval chain &amp; priority is defined under <a href="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/Default.htm">Administration</a>, Access Control Lists - Operations and must be adhered to for the approval to be successful.&nbsp;</li>
+  <li>&nbsp; Pending work flow items are also unlocked according to the approval priority in the approval chain.&nbsp;</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Once a work flow is initiated, the first role on the approval chain is unlocked - to carry out the approval action. The remaining roles meanwhile stay locked.&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Soon as the first role approves and commits the approval, the role is locked and the second one unlocked. This is reciprocated and once all roles have approved, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;they are locked and the approval cannot be done for a second time.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;For instance :</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;If 3 roles are required to approve a requisition, users in role 1, 2 &amp; 3 &nbsp;will carry out the approval in that order respectively.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5440.png" alt=""></figure>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Requisition &nbsp;Approval Fig 1</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;The operations manager will be the first to do the approval, then the Chief Technology Officer &amp; finally the Branch Manager.&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;If two approvers from a single role are required to do an approval, both must do it (in whichever order )for an entry to be captured as approved.&nbsp;</p>
+<ul>
+  <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If any of the users in roles within the approval chain REJECTS the requisition at any point, the status of the entry changes to rejected and the whole approval &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; process is terminated.</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;N/B : Rejection severs the approval chain.</p>
+<ul>
+  <li>Once an item has an approval process initiated and the first role defined in the approval chain has carried out the approval, the item cannot be modified.&nbsp;</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The following message will pop up in such a scenario :&nbsp;</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5491.png" alt=""></figure>
+<p><br>&nbsp;</p>
+<p>The operation will in turn fail :</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5492.png" alt=""></figure>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem217.png" alt=""></figure>
+<p>To access this sub module click on: Procurement and Assets Management -&gt; Navigate -&gt; Operations -&gt; Procurement -&gt; Requisitions -&gt; Approval.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;REMEMBER : Only the users in the ROLES defined in the approval chain can carry out the approval operation at this point.&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;To carry out the approval, log on with a user in the first role in the approval chain&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (pending entries to be approved are not available to roles outside the approval chain).</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; All the aforementioned are applicable to all sub modules with origination / approval tasks.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp;The following screen will open up :</p>
+<p><br>&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5441.png" alt=""></figure>
+<p>&nbsp; Requisition Approval &nbsp;Fig 2.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The first required approver is the operations manager. See above.&nbsp;</p>
+<p>&nbsp;The approval stage in role is 0 of 1; meaning the first approver is yet to carry out the approval.&nbsp;</p>
+<p>&nbsp;For multiple - say 2 - approvers per role, the Approval Stage In Role would have been 0 of 2.&nbsp;</p>
+<p>The Approval Stage In Work flow is 0 of 3; implying that the first user is yet to approve the entry and the total approval stages are 3.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Once approved, the Approval Stages In Role &amp; Work Flows will update accordingly, simultaneously.&nbsp;</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; REMEMBER : You can only approve an entry whose status is pending.&nbsp;</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p><br>&nbsp;</p>
+<h1>Approving A Procurement Requisition :</h1>
+<h1><br>&nbsp;</h1>
+<h1>Branch Manager (1st Approver).</h1>
+<p>&nbsp; &nbsp;Identify the entry to be verified (from multiple entries):</p>
+<p><br>&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5442.png" alt=""></figure>
+<p>Requisition Approval &nbsp;Fig 3.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; Click on the verification icon&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5443.png" alt=""></figure>
+<p>against the entry to open the following window :</p>
+<p><br>&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5444.png" alt=""></figure>
+<p>&nbsp;Requisition Approval &nbsp;Fig 4.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Remarks - Type in the appropriate approval remarks into the remarks field.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Pick the Approved option&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5445.png" alt=""></figure>
+<p>from the drop down menu.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Click on the Approve button to effect the approval.&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/THUMBSUPEMOTICON.png" alt=""></figure>
+<p>On successful completion you will get a pop up message confirming that the operation was successful.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5446.png" alt=""></figure>
+<p><br>&nbsp;</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Refresh and confirm that the entries are updated as below :</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5447.png" alt=""></figure>
+<p>&nbsp;Requisition Approval &nbsp;Fig 5.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp;Notice that &nbsp;the Approval Stage In Role has been updated to 1 of 1 &amp; Approval Stage In Work Flow has been updated to 1 of 3; meaning two more approvals are required.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;Let the second approver in the chain log on and approve the entry.&nbsp;</p>
+<p><br>&nbsp;</p>
+<h1>Chief Technology Officer (2nd Approver) :</h1>
+<h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Notice that &nbsp;the Approval Stage In Role here is 0 if &nbsp;1. see below :</h1>
+<h1><br>&nbsp;</h1>
+<h1>&nbsp;</h1>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5448.png" alt=""></figure>
+<p>Requisition Approval &nbsp;Fig 6.</p>
+<h1>&nbsp; Click on the verification icon&nbsp;</h1>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5443.png" alt=""></figure>
+<h1>against the entry to open the following window :</h1>
+<h1><br>&nbsp;</h1>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5449.png" alt=""></figure>
+<p>Requisition Approval &nbsp;Fig 7.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Remarks - Type in the appropriate approval remarks into the remarks field.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Pick the Approved option&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5445.png" alt=""></figure>
+<p>from the drop down menu.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Click on the Approve button to effect the approval.&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/THUMBSUPEMOTICON.png" alt=""></figure>
+<p>On successful completion you will get a pop up message confirming that the operation was successful.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; Refresh and confirm that the entries are updated as below :</p>
+<p><br>&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5450.png" alt=""></figure>
+<p>Requisition Approval &nbsp;Fig 8.</p>
+<p>&nbsp; &nbsp; &nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp;Notice that &nbsp;the Approval Stage In Role has been updated to 1 of 1 &amp; Approval Stage In Work Flow has been updated to 2 of 3; meaning one more approval is required.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Let the third &amp; last approver in the chain log on and approve the entry.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp;Branch Manager (3rd Approver) :</p>
+<p>Notice that &nbsp;the Approval Stage In Role for this role is 0 of 1.&nbsp;</p>
+<p><br>&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5451.png" alt=""></figure>
+<p>Requisition Approval &nbsp;Fig 9.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Click on the verification icon&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5443.png" alt=""></figure>
+<p>against the entry to open the following window :&nbsp;</p>
+<p><br>&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5452.png" alt=""></figure>
+<p>Requisition Approval &nbsp;Fig 10.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Remarks - Type in the appropriate approval remarks into the remarks field.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Pick the Approved option&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5445.png" alt=""></figure>
+<p>from the drop down menu.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Click on the Approve button to effect the approval.&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/THUMBSUPEMOTICON.png" alt=""></figure>
+<p>On successful completion you will get a pop up message confirming that the operation was successful.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; Refresh and confirm that the entries are updated as below :</p>
+<p><br>&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5453.png" alt=""></figure>
+<p>Requisition Approval &nbsp;Fig 11.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; Click on the view icon&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5454.png" alt=""></figure>
+<p>&nbsp;against the entry to open the following window :</p>
+<p>&nbsp;Approvals Tab.&nbsp;</p>
+<p><br>&nbsp;</p>
+<figure class="image"><img src="mk:@MSITStore:C:\Users\ADMIN\Desktop\Documents\Manuals\Vanguard%20Financials%20Documentation%20V%202.11.chm::/lib/NewItem5455.png" alt=""></figure>
+<p>Requisition Approval &nbsp;Fig 12.</p>
+<p><br>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Once all the approvals are done, The entry's status changes to approved. Quotations can now be raised from the approved requisitions.</p>
+<p>Created with the Personal Edition of HelpNDoc: <a href="https://www.helpndoc.com/feature-tour">Easily create HTML Help documents</a></p>
+<p>All Rights Reserved.</p>

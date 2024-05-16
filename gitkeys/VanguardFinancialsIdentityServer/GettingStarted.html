@@ -1,0 +1,160 @@
+<!--
+title: Vanguard Financials Idenity Server
+description: Authentication Server fo banguard financials
+published: true
+date: 2024-01-18T05:40:20.078Z
+tags: authentication, oidc, scopes
+editor: ckeditor
+dateCreated: 2024-01-17T09:37:28.012Z
+-->
+
+<h1><strong>Getting Started</strong></h1>
+<p>OpenID Connect (OIDC) is an authentication protocol built on top of the OAuth 2.0 framework. It is designed to provide a standardized and secure way for applications to perform user authentication. OIDC enables clients (such as the New Phoenix Application) to verify the identity of end-users based on authentication performed by an authorization server.Key features of OIDC include the use of identity tokens, which contain information about the authenticated user, and the ability to obtain additional user information through user info endpoints. It also supports Single Sign-On (SSO), allowing users to log in once and access multiple applications without the need to re-enter credentials.</p>
+<p>In the context of the Core Banking System (Vanguard Financials), the Vanguard Financials Identity Server likely acts as the OIDC provider (authorization server) responsible for authenticating users and providing identity tokens.These tokens can then be used to securely verify the identity of users and access protected resources. The authentication server comes with its own data source, meaning<strong> VanguardFinancialsDB_AuthStore&nbsp;</strong>will no longer be used. Instead a new data source <strong>VanguardFinancialsDB_IdentityServer </strong>will be used to store all user information i.e username,email, password e.t.c</p>
+<p>In summary, OpenID Connect is a protocol that enhances OAuth 2.0 by providing a standardized way for applications to authenticate users, obtain user information, and enable Single Sign-On. The Vanguard Financials Identity Server implements this protocol to facilitate secure and standardized user authentication for the phoenix solution. You can read more about OIDC and its protocols <a href="https://openid.net/developers/how-connect-works/">here</a></p>
+<h2><strong>Pre-Requisites</strong></h2>
+<p>In order to run the authentication server on your local environment, there are several pre-requisites that should be existing on the environment you are trying to setup . They are listed below</p>
+<p>&nbsp;<strong>Source Code of the project</strong></p>
+<ul>
+  <li><strong>For Developers -</strong> This can be cloned from the Azure Repository , a repository under the name <strong>PhoenixIdentity.&nbsp;</strong></li>
+  <li><strong>For Support Staff -&nbsp;</strong>You can receive the files from the system administrator.</li>
+</ul>
+<p><strong>.NET Core version 6&nbsp;</strong>&nbsp;</p>
+<ul>
+  <li>The project requires a .Net Core runtime installed on the environment you are trying to setup the authentication server. At the time of writing the project requires an installation of version 6 installed. Download from <a href="Getting Started OpenID Connect (OIDC) is an authentication protocol built on top of the OAuth 2.0 framework. It is designed to provide a standardized and secure way for applications to perform user authentication. OIDC enables clients (such as the New Phoenix Application) to verify the identity of end-users based on authentication performed by an authorization server.Key features of OIDC include the use of identity tokens, which contain information about the authenticated user, and the ability to obtain additional user information through user info endpoints. It also supports Single Sign-On (SSO), allowing users to log in once and access multiple applications without the need to re-enter credentials. In the context of the Core Banking System (Vanguard Financials), the Vanguard Financials Identity Server likely acts as the OIDC provider (authorization server) responsible for authenticating users and providing identity tokens.These tokens can then be used to securely verify the identity of users and access protected resources. The authentication server comes with its own data source, meaning VanguardFinancialsDB_AuthStore will no longer be used. Instead a new data source VanguardFinancialsDB_IdentityServer will be used to store all user information i.e username,email, password e.t.c In summary, OpenID Connect is a protocol that enhances OAuth 2.0 by providing a standardized way for applications to authenticate users, obtain user information, and enable Single Sign-On. The Vanguard Financials Identity Server implements this protocol to facilitate secure and standardized user authentication for the phoenix solution Pre-Requisites In order to run the authentication server on your local environment, there are several pre-requisites that should be existing on the environment you are trying to setup . They are listed below 1.	 Source Code of the project •	For Developers - This can be cloned from the Azure Repository , a repository under the name PhoenixIdentity.  •	For Support Staff - You can receive the files from the system administrator. 2.	.NET Core version 6   •	The project requires a .Net Core runtime installed on the environment you are trying to setup the authentication server. At the time of writing the project requires an installation of version 6 installed. Download from here https://dotnet.microsoft.com/en-us/download/dotnet/6.0">here</a></li>
+</ul>
+<p><strong>SQL Server</strong></p>
+<ul>
+  <li>The environment should also have an MSQL instance running. Any version can work 2018 or higher.</li>
+</ul>
+<h2>Components</h2>
+<p>Once you have ensured have all the pre-requisites and you have the source code to the project. The authentication server has three components. <strong>STS, STSAdmin, STSApi.&nbsp;</strong></p>
+<ul>
+  <li><strong><u>STS (Security Token Service)</u></strong></li>
+</ul>
+<p>&nbsp;This is the main component of the authentication server.</p>
+<p>In the context of OpenID Connect (OIDC), an STS (Security Token Service) is a specialized server responsible for issuing security tokens that enable secure communication and authentication between different entities within a system. In our case, using Vanguard Financials Identity Server as the STS, it serves as the OIDC provider or authorization server.</p>
+<p>The STS, such as Duende Identity Server, plays a crucial role in the OIDC flow. When a user attempts to log in to a client application (e.g., the Phoenix CBS Applications), the following steps typically occur:</p>
+<p><strong>Authentication Request:</strong> The client application initiates the authentication process by sending a request to the Vanguard Financials Identity Server.</p>
+<p><strong>User Authentication:</strong> Vanguard Financials Identity Server authenticates the user based on the configured authentication mechanisms, such as username/password, multi-factor authentication, etc.</p>
+<p><strong>Authorization Grant:</strong> Upon successful authentication, Vanguard FinancialsIdentity Server issues an authorization grant (e.g., an identity token) to the client application.</p>
+<p><strong>Token Exchange:</strong> The client application exchanges the authorization grant for access tokens, ID tokens, or other types of tokens that can be used to access protected resources or make authenticated API requests.</p>
+<p><strong>User Information:</strong> If needed, the client application can make additional requests to the Vanguard&nbsp;Identity Server's user info endpoint to retrieve additional information about the authenticated user.</p>
+<p>By acting as the STS, Vanguard Financials Identity Server ensures the security of the authentication process, issues the necessary tokens, and facilitates secure communication between the client application and other services within the system. The use of an STS like Vanguard FinancialsIdentity Server helps centralize and manage authentication and authorization processes, providing a robust and standardized solution for secure user authentication in OIDC-based systems.</p>
+<ul>
+  <li><strong><u>STS(Admin Dashboard)</u></strong></li>
+</ul>
+<p>This is the second component of the authentication server. In the context of Identity Servers, especially in scenarios involving administration and management of users, roles, and permissions, an "Admin STS" or "Admin Identity Server" typically refers to a Security Token Service (STS) instance that is dedicated to handling administrative tasks related to identity and access management.</p>
+<p>Here is a general overview:</p>
+<p><strong>User and Role Management:</strong> The Admin STS provides a set of interfaces or APIs for administrators to manage users, roles, and other identity-related entities. This could include functionalities like creating or deleting user accounts, assigning roles, resetting passwords, and managing other user attributes.</p>
+<p><strong>Authorization and Permissions:</strong> Administrators often need to define and manage access control policies within an application or system. The Admin STS might provide features for setting up authorization rules, managing permissions, and assigning roles to users.</p>
+<p><strong>Audit and Logging:</strong> Security and compliance are critical aspects of identity management. An Admin Identity Server may include features for auditing and logging administrative actions, helping administrators track changes and ensuring accountability.</p>
+<p><strong>Configuration and Customization:</strong> Admin STS solutions often allow administrators to configure various aspects of the identity and access management system. This could include setting authentication policies, defining custom claims, and configuring other security-related parameters.</p>
+<p><strong>Dashboard and Reporting:</strong> An Admin Identity Server may provide a web-based dashboard or reporting interface, giving administrators insights into user activities, login attempts, and other relevant metrics.</p>
+<ul>
+  <li><strong><u>STSApi( Application Programming Interface)</u></strong></li>
+</ul>
+<p>This is the component that the CBS Phoenix Solution uses to communicate with our authentication server. If we want to view, create, edit users without having access to the admin dashboard we use the <strong>STSApi. </strong>When we create a new user in the CBS application, the new user is queued for creation in the authentication's sever (Vanguard Financials Identity Server). There is a window service dll that will then do the task of adding that user to the Authentication Server Data Store. The window service will use this component to create the new user.</p>
+<p>&nbsp;</p>
+<h2>Folder Structure</h2>
+<p>When you get the source code to the project once you navigate to the <strong>src </strong>directory you will see the following directories</p>
+<p>&nbsp;</p>
+<figure class="image"><img src="/identity-server-flder-structrue.png">
+  <figcaption>Vanguard Financials Identity Server Folder Strucure</figcaption>
+</figure>
+<p><strong>VanguardFinancialsIdentity.Admin-</strong>Contains Source Code to the <strong>STSAdmin Project</strong></p>
+<p><strong>VanguardFinancialsIdentity.Admin.Api-</strong>Contains Source Code to the <strong>STSApi Project</strong></p>
+<p><strong>VanguardFinancialsIdentity.STS.Identity - </strong>Contains Source Code to the <strong>STS Project.</strong></p>
+<p>&nbsp;</p>
+<h1><strong>Basic Concepts</strong></h1>
+<p><strong>OIDC </strong>protocol can be overwhelming to understanding. There are certain concepts that you should be able to have an overview of what they are and how they work. This configurations are controlled by the admin dashboard.&nbsp;</p>
+<h2>Terminologies</h2>
+<p>A brief summary of terminologies used in the context of OIDC.</p>
+<h3>Client</h3>
+<p>In the context of OpenID Connect (OIDC), a "client" refers to a software application or a service that interacts with the OIDC provider (also known as an authorization server) to perform authentication and obtain identity information about end-users. Clients are integral components of the OIDC flow and can take various forms, such as web applications, mobile apps, single-page applications (SPAs), or backend services. In our case the <strong>Phoenix CBS Solution </strong>is the client.</p>
+<h3>Grant Types</h3>
+<p>Grant types define how a client application obtains authorization to access a protected resource. Each grant type represents a different way in which the client can request and obtain the access tokens needed for authentication and resource authorization. There are several different types of grant types. For our case the CBS Solution uses <a href="https://oauth.net/2/grant-types/authorization-code/"><strong>AuthorizationCode.</strong></a></p>
+<h3><strong>Redirect URI</strong></h3>
+<p>&nbsp;It is used to specify where the authorization server should send the user after the authentication and authorization process is complete. The Redirect URI is defined by the client during the registration process with the authorization server. Here the user is redirected back to the solution.</p>
+<h3>ID Token</h3>
+<p>Used to convey information about the authentication and identity of a user. It is one of the tokens issued by the Authorization Server as part of the OIDC authentication flow.</p>
+<p>The primary purpose of the ID token is to provide the client application with information about the authenticated user. It is not meant to be used for accessing protected resources but rather serves as a lightweight and secure way to convey user identity information to the client.</p>
+<h3>Scope</h3>
+<p>Scope is a parameter used during the authorization process to specify the level of access and permissions that a client application is requesting from a user. Scopes define what resources or actions the client is allowed to perform on behalf of the user.</p>
+<p>Custom scopes can also be defined based on the specific requirements of the application and the authorization server. Scopes play a critical role in controlling the granularity of access and helping users understand the permissions they are granting to client applications.</p>
+<p>For example, an authorization request might include scopes like <code>openid profile email</code> to request authentication, basic profile information, and email access. The authorization server responds with tokens (such as ID tokens and access tokens) that correspond to the approved scopes.</p>
+<p>&nbsp;</p>
+<p>This is just an overview more information on terminologies used in OIDC can be found <a href="https://auth0.com/docs/authenticate/protocols/openid-connect-protocol">here </a>and what they do and mean.</p>
+<p>&nbsp;</p>
+<h2><u>Login Process flow</u></h2>
+<p><strong>Initiation by Client:</strong> The process begins when the client <strong>Phoenix CBS Solution</strong> initiates the flow by redirecting the user to the authorization server (<strong>Vanguard Financials Identity Server</strong>) with a request containing parameters such as client ID, scope, redirect URI, and response type (which is set to "code" for this flow). Read more on what this terms mean <a href="https://auth0.com/docs/authenticate/protocols/openid-connect-protocol">here</a></p>
+<p><strong>User Authentication:</strong> The user is presented with a login screen by the Vanguard Financials Identity server to enter their credentials and authenticate. Once authenticated, the authorization server seeks the user's consent for the requested permissions.</p>
+<p><strong>Authorization Grant:</strong> If the user consents, the Vanguard Financials Identity server generates an authorization code and redirects the user back to the client's specified redirect URI along with the authorization code.</p>
+<p><strong>Token Request:</strong> The client, upon receiving the authorization code, sends a confidential request (including client ID, client secret, authorization code, and redirect URI) directly to the Vanguard Financials Identity server's token endpoint.</p>
+<p><strong>Token Issuance:</strong> The Vanguard Financials Identity Server validates the request and, if successful, responds with an access token, an ID token, and optionally, a refresh token.</p>
+<p><strong>Token Usage:</strong> The client can now use the obtained access token to make secure requests to the protected resources (APIs) on behalf of the authenticated user. The ID token may contain user information, and the refresh token can be used to obtain a new access token when the current one expires.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1><strong>Installation</strong></h1>
+<p>After setting up all the pre-requisites and familiarizing with the folder structure and what the project entails you can proceed to run the authentication server. First and foremost we need to configure all the configuration settings for each project. This settings change per environment basis. The settings configuration will be configured depending on your environemnt.</p>
+<p>By default the projects have been setup to run on this ports</p>
+<ul>
+  <li><strong>STS - 44310</strong></li>
+  <li><strong>STSAdmin - 44303</strong></li>
+  <li><strong>STSAdminApi - 44302</strong></li>
+</ul>
+<h2>Configuring Security Token Service (STS)</h2>
+<p>Since this &nbsp;is the main component, we need to configure this part. In the project folder (<strong>VanguardFinancialsIdentity.STS.Identity) </strong>there is an <code><i>appsettings.json</i></code> file.</p>
+<figure class="image"><img src="/identiy-server-connectionstring.png"></figure>
+<p>&nbsp;</p>
+<p>In the <strong>STSIdentity </strong>we are only concerned with the database connection strings section. This is where you define the connection string of your database connection.</p>
+<p><code>Server</code>- Should be the server name or IP of the server where the SQL Server Instance is running.</p>
+<p><code>Database</code>- Should be the database name of the authentication server. For convention puposes leave it as it is.</p>
+<p>Once this connection strings have been setup correctly, once you run the project for the first time the database will be automatically created with their respective tables and data.Will get to this later. The last step is to specify where the <strong>STSAdmin </strong>project is running on that server/environment. By default it will be set to <code>https://localhost:44303</code>. Change it if your Admin project is running on a different port.</p>
+<figure class="image"><img src="/stsidentity-appsttings-url.png"></figure>
+<p>With this steps done you can proceed to change the config settings to the other project.</p>
+<h2>Configuring STS Admin (Security Service Token Admin Dashboard)</h2>
+<p>This project has several configuration files we need to edit first before we proceed.&nbsp;</p>
+<figure class="image image-style-align-left"><img src="/admin-settings-tochange.png">
+  <figcaption>Configuration Settings Identity Server Admin</figcaption>
+</figure>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<ul>
+  <li><code>appsettings.json</code></li>
+</ul>
+<p>This file contains the database connection string, the admin configuration which contains configuration settings for the admin dashboard from assets, to the smtp email configurations for sending emails for forget password functionality. For now will just edit the database connection string to point to our database. This connection string should match the one previously described.</p>
+<figure class="image"><img src="/appsettings-admin-connection.png">
+  <figcaption>Database Connection String appsettings.json for admin</figcaption>
+</figure>
+<p>&nbsp;</p>
+<ul>
+  <li><code>identitydata.json</code></li>
+</ul>
+<p>This file contains information that you would wish to be inserted into the database table for the first time when you run the migrations. By default it will insert a user into the <code>dbo.Users</code>the User created usually has super administrator access. This user is the only who can access the admin dashboard no one else.&nbsp;</p>
+<figure class="image"><img src="/identitydata-admin.png">
+  <figcaption>IdenityData.json STSAdmin proj</figcaption>
+</figure>
+<p>&nbsp;</p>
+<p>Based on the configs above when you run the migration it will go the <code>dbo.Roles</code>table add a role with the name <code>VanguardFinancialsIdentityRole</code>. Move to the users table create a user by the username <code>admin</code> set the password to <code>pa$$word123</code>and email to <code>devteam@centrino.co.ke</code>and assign them the role we just created. It will also proceed and give the user the necessary claims.</p>
+<ul>
+  <li><code>identityserverdata.json</code></li>
+</ul>
+<p>This configuration contains all clients,identity resources, api scopes and api resources that should be inserted into the respective tables. Will only edit the clients section. This can remain as it is only change it if your <strong>STSAdmin </strong>project is running on a different port apart from the default of 44303.</p>
+<figure class="image"><img src="/identity-server-admin-identity-server-data.png">
+  <figcaption>IdentiyserverData.json</figcaption>
+</figure>
+<p>Take note the the http scheme should be https. The <strong>STSAdmin </strong>project can only run under an <strong>SSL </strong>secure connection.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
